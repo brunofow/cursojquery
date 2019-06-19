@@ -1,14 +1,14 @@
 function inserePlacar() {
     var corpoTabela = $(".placar").find("tbody");
-    var usuario = "Seu-nome"
+    var usuario = "Bruno";
     var numPalavras = $("#contador-palavras").text();
 
     var linha = novaLinha(usuario, numPalavras);
     linha.find(".botao-remover").click(removeLinha);
     corpoTabela.append(linha);
-
     mostraPlacar();
     scrollPlacar();
+
 }
 
 function scrollPlacar () {
@@ -16,6 +16,11 @@ function scrollPlacar () {
     $("body").animate({
         scrollTop: posicaoPlacar+"px"
     }, 1000);
+}
+
+function mostraTutorial () {
+    var tutorialPlacar = $(".tutorial-placar");
+    tutorialPlacar.fadeIn(600).fadeOut(5000);
 }
 
 function novaLinha(usuario, palavras) {

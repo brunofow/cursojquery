@@ -21,3 +21,28 @@ body {
 .placar {
     display: none;
 }
+.botoes {
+    position: relative;
+}
+.tutorial-placar {
+    border: 10px solid #ccc;
+    border-radius: 5px;
+    width: 10em;
+    padding: .5em;
+    position: absolute;
+    top: 130%;
+    left: 8%;
+    box-sizing: border-box;
+    background-color: #b6b6b6;
+    display: none;
+}
+.tutorial-placar::before{
+    content: '';
+    width: 1em;
+    height: 1em;
+    border: 5px solid #ccc;
+    position: absolute;
+    bottom: 7.6em;
+    right: 7.9em;
+    transform: translateY(.5em) rotate(45deg);
+}
