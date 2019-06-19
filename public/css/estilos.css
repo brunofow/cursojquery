@@ -46,3 +46,13 @@ body {
     right: 7.9em;
     transform: translateY(.5em) rotate(45deg);
 }
+#erro {
+    display: none;
+    color: #ff0000;
+}
+#spinner {
+    display: none;
+}
+#frase-id {
+    width: 40px;
+}

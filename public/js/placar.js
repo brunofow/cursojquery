@@ -6,21 +6,21 @@ function inserePlacar() {
     var linha = novaLinha(usuario, numPalavras);
     linha.find(".botao-remover").click(removeLinha);
     corpoTabela.append(linha);
-    mostraPlacar();
+    $(".placar").slideDown();
     scrollPlacar();
 
 }
+function mostraTutorial () {
+    var tutorialPlacar = $(".tutorial-placar");
+    tutorialPlacar.fadeIn(600).fadeOut(5000);
+}
+
 
 function scrollPlacar () {
     var posicaoPlacar = $(".placar").offset().top;
     $("body").animate({
         scrollTop: posicaoPlacar+"px"
     }, 1000);
-}
-
-function mostraTutorial () {
-    var tutorialPlacar = $(".tutorial-placar");
-    tutorialPlacar.fadeIn(600).fadeOut(5000);
 }
 
 function novaLinha(usuario, palavras) {
