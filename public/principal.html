@@ -6,12 +6,16 @@
     <link rel="stylesheet" href="css/libs/materialize.min.css">
     <link rel="stylesheet" href="css/libs/google-fonts.css">
     <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/libs/selectize.default.css">
+    <link rel="stylesheet" type="text/css" href="css/libs/tooltipster.bundle.min.css" />
+
+    <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
     <div class="container">
       <h1 class="center">Alura Typer</h1>
 
-      <p class="frase">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis error ut consequatur eaque magnam sunt maiores distinctio aliquam molestias, deleniti ex doloribus dolores saepe quis impedit minus nobis ipsam sit?</p>
+      <p class="frase">Limao siciliano é bom. Hell Yeah, frase mais dificil do game com algumas palavras que não vou contar mais o contador vai.</p>
 
       <div class="center">
           <img src="img/spinner.gif" alt="Carregando" id="spinner">
@@ -21,7 +25,7 @@
       <ul class="informacoes center">
           <li>
               <i class="small material-icons">description</i>
-              <span id="tamanho-frase">5</span> palavras
+              <span id="tamanho-frase">15</span> palavras
           </li>
           <li>
               <i class="small material-icons">query_builder</i>
@@ -33,15 +37,23 @@
       <textarea class="campo-digitacao" name="" id="" cols="30" rows="10"></textarea>
 
       <div class="botoes">
-          <a id="botao-reiniciar" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">restore</i></a>
-           <a id="botao-placar" class="btn-floating btn-large waves-effect waves-light green"><i class="material-icons">assignment</i></a>
-           <a id="botao-frase" class="btn-floating btn-large waves-effect waves-light blue"><i class="material-icons">shuffle</i></a>
-           <a id="botao-frase-id" class="btn-floating btn-large waves-effect waves-light cyan"><i class="material-icons">repeat_one</i></a>
+          <a id="botao-reiniciar" class="btn-floating btn-large waves-effect waves-light red
+          tooltip" title="Reinicia o jogo"><i class="material-icons">restore</i></a>
+           <a id="botao-placar" class="btn-floating btn-large waves-effect waves-light green
+           tooltip" title="Mostra/Esconde placar"><i class="material-icons">assignment</i></a>
+           <a id="botao-frase" class="btn-floating btn-large waves-effect waves-light blue
+           tooltip" title="Muda frase: aleatoria"><i class="material-icons">shuffle</i></a>
+           <a id="botao-frase-id" class="btn-floating btn-large waves-effect waves-light cyan
+           tooltip" title="Muda frase: com número"><i class="material-icons">repeat_one</i></a>
            <input type="number" id="frase-id" min="0">
-            <a id="botao-sync" class="btn-floating btn-large waves-effect waves-light yellow"><i class="material-icons">swap_vert</i></a>
-           <span class="tutorial-placar">
-               Clique nesse botão para esconder ou mostrar o placar.
-           </span>
+           <div class="select-usuarios">
+               <select id="usuarios">
+                   <option value="Bruno">Bruno</option>
+                </select>
+           </div>
+            <a id="botao-sync" class="btn-floating btn-large waves-effect waves-light yellow
+             tooltip-carregado" title="Sincronizado com Sucesso"><i class="material-icons">swap_vert</i></a>
+
       </div>
 
 
@@ -72,6 +84,8 @@
     <script src="js/main.js"></script>
     <script src="js/placar.js"></script>
     <script src="js/frase.js"></script>
+    <script src="js/selectize.js"></script>
+     <script src="js/tooltipster.bundle.min.js"></script>
     </script>
 </body>
 </html>

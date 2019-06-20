@@ -9,6 +9,14 @@ $(function() {
     inicializaMarcadores();
     $("#botao-reiniciar").click(reiniciaJogo);
     atualizaPlacar();
+    $("#usuarios").selectize({
+        create: true,
+        sortField: "text"
+    });
+    $(".tooltip").tooltipster();
+    $(".tooltip-carregado").tooltipster({
+        trigger: "custom"
+    });
 });
 
 function atualizaTempoInicial (tempo) {
@@ -50,10 +58,16 @@ function inicializaCronometro () {
 });
 }
 
-function finalizaJogo () {
+// function finalizaJogo () {
+//     campo.attr("disabled", true);
+//     $("#botao-reiniciar").removeAttr("disabled");
+//     campo.addClass("desativado")
+//     inserePlacar();
+// }
+
+function finalizaJogo() {
     campo.attr("disabled", true);
-    $("#botao-reiniciar").removeAttr("disabled");
-    campo.addClass("desativado")
+    campo.toggleClass("campo-desativado");
     inserePlacar();
 }
 
@@ -73,15 +87,14 @@ function inicializaMarcadores () {
 
 
 
-function reiniciaJogo () {
-    campo.removeAttr("disabled");
+function reiniciaJogo() {
+    campo.attr("disabled", false);
     campo.val("");
-    $("#contador-palavras").text("0");
-    $("#contador-caracteres").text("0");
+    $("#contador-palavras").text(0);
+    $("#contador-caracteres").text(0);
     $("#tempo-digitacao").text(tempoInicial);
     inicializaCronometro();
-    campo.removeClass("desativado");
-    campo.removeClass("campo-certo");
-    campo.removeClass("campo-errado");
-
+    campo.toggleClass("campo-desativado");
+    campo.removeClass("borda-vermelha");
+    campo.removeClass("borda-verde");
 }
